@@ -1,13 +1,255 @@
-body {
+body{
+  background-color: hsl(0, 0%, 11%);
+  font-family: 'inter', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+  h1{
+      font-size: 4rem;
+      justify-content: center;
+      color: hsl(178, 57%, 46%);
+      font-weight: 900;
+  }
+
+  th{
+      background-color: hsl(0, 0%, 26%);
+      justify-content: center;
+      text-align: center;
+      border-radius: 15px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: whitesmoke;
+      padding: 1rem 25rem;
+  }
+  
+  td{
+      font-size: 1rem;
+      font-weight: 600;
+      color: hsl(0, 0%, 90%);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tareas{
+  margin: 3rem;
+}
+
+.tabla-tareas{
+  margin: 1rem;
+}
+
+.input-y-btn input{
+  display: flexbox;
+  position: relative;
+  padding: .5rem 2rem;
+  border-radius: 10px;
+  border: 1px solid hsla(0, 0%, 37%, 0.5);
+  font-size: 1.2rem;
+}
+
+.input-y-btn button{
+  position: absolute;
+  margin: 0 0 0 .5rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: hsl(0, 0%, 25%);
+  color: whitesmoke;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover{
+      background-color: hsl(0, 0%, 40%);
+  }
+}
+
+.td-tareas{
+  margin: 1rem;
+  padding: .5rem 6rem;
+  height: auto;
+  width: 40em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 76%);
+  box-shadow: hsl(0, 0%, 64%) 0px 0px 5px 0px;
+}
+
+.td-tareas input[type="checkbox"]{
+  display: flex;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 2em;
+  width: 2em;
+  background-color: hsl(0, 0%, 59%);
+  border-radius: 0.5em;
+  cursor: pointer;
+  outline: none;
+  padding: 1em 1em;
+  transition: all 0.2s ease;
+
+  &:hover{
+      background-color:  hsl(0, 0%, 51%);
+  }
+
+  &:checked{
+      background-color: indianred;
+
+      &:hover{
+          background-color: hsl(0, 48%, 45%);
+      }
+  }
+}
+
+.div-tareas{
+  color: hsl(0, 0%, 15%);
+  font-size: 1.4em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 1em 1em;
+  text-transform: lowercase;
+  
+  &::first-letter{
+      text-transform: uppercase;
+  }
+}
+
+.div-mostrar-tareas{
+  display: flex;
+  position: relative;
+  margin: 3rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.div-mostrar-tareas  input[type="checkbox"]{
+  display: inline-flex;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 2.5em;
+  width: 2.5em;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 73%);
+  border-radius: 0.5em;
+  margin: 2rem 2rem 2rem 1rem;
+  outline: none;
+  padding: 1em 1em;
+
+  &:hover{
+      background-color: hsl(0, 0%, 60%);
+  }
+
+  &:checked{
+      background-color: indianred;
+
+      &:hover{
+          background-color: hsl(0, 48%, 45%);
+      }
+  }
+}
+
+.div-mostrar-tareas label{
+  font-size: 1.7em;
+  font-weight: 800;
+  color: hsl(178, 57%, 46%);
+}
+
+.div-mostrar-tareas button{
+  margin-left: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color:rgb(198, 58, 58);
+  color: whitesmoke;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover{
+      background-color: rgb(176, 61, 61);
+  }
+}
+
+
+@media(width < 854px){
+  body{
+      display: block;
+      justify-content: center;
+      
+      h1{
+          font-size: 2.3rem;
+      }
+
+      th{ 
+          padding: 1rem 15rem;
+          font-size: 2rem;
+      }
+
+      td{
+          font-size: 1rem;
+      }
+
+      .td-tareas{
+          padding: .5rem 1rem;
+          
+      }
+  }
+}
+
+@media(width < 768px){
+  body{
+      display: block;
+      justify-content: center;
+      
+      h1{
+          font-size: 2.3rem;
+      }
+
+      th{
+          padding: 1rem 2rem;
+          font-size: 2rem;
+      }
+
+      td{
+          font-size: 1rem;
+      }
+  }
+
+  .td-tareas{
+      width: 30em;
+  }
+}
+
+@media(width < 640px){
+  body{
+      display: block;
+      justify-content: center;
+      
+      h1{
+          font-size: 2.3rem;
+      }
+
+      th{
+          font-size: 2rem;
+      }
+
+      td{
+          font-size: 1rem;
+      }
+  }
+
+  .td-tareas{
+      width: 20em;
+  }
 }
